@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+    <script>
+      let start = confirm("Welcome to Kley's Russian Roulette! Would you like to play?");
+      if (start == true) {
+        alert("Let's get to it then!");
+        let bulletPosition = Math.floor(Math.random() * 6) + 1;
+        let pullCount = 0;
+        let triggerConfirm = confirm('Would you like to pull the trigger?');
+        if (triggerConfirm == true) {
+          while (triggerConfirm == true) {
+            pullCount = (pullCount + 1);
+            if(pullCount == bulletPosition) {
+              alert('Congratulations! You died.');
+              break;
+              }
+              let pullAgain = confirm(`Congratulations! You have not died. Pull again? Pull count: ${pullCount}`);
+              if (pullAgain == false) {
+                alert('Congratulations! You are a chicken.');
+                break;
+              }
+          }
+        }
+        else {                 
+          alert('Congratulations! You are a chicken.');
+        }
+      }
+        else {
+          alert('You will change your mind someday.');
+        } 
+    </script>
+  </body>
+
+</html>
